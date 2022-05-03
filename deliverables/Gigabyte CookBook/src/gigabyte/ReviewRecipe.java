@@ -1,6 +1,5 @@
 package gigabyte;
 
-//http://www.java2s.com/Tutorials/Java/Swing_How_to/JFileChooser/Display_the_Contents_of_a_text_file_in_a_JTextArea.htm
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -28,7 +27,7 @@ public class ReviewRecipe {
 
 	private JTextField servingTextField;
 	private JLabel servingLabel;
-	
+
 	private JTextField calorieTextField;// creates calorie text field
 	private JLabel calorieLabel;// creates calorie label
 
@@ -54,12 +53,12 @@ public class ReviewRecipe {
 				BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 				for (int i = 0; i < 0; i++)
 					input.readLine();
-				line1 = input.readLine();
-				line2 = input.readLine();
-				line3 = input.readLine();
-				line4 = input.readLine();
-				line5 = input.readLine();
-				line6 = input.readLine();
+				line1 = input.readLine();// pulls line from file
+				line2 = input.readLine();// pulls line from file
+				line3 = input.readLine();// pulls line from file
+				line4 = input.readLine();// pulls line from file
+				line5 = input.readLine();// pulls line from file
+				line6 = input.readLine();// pulls line from file
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -68,30 +67,27 @@ public class ReviewRecipe {
 			System.out.println("Operation has been CANCELLED");
 		}
 
-		recipeNameTextField = new JTextField(line1);// creates recipe name text field
+		recipeNameTextField = new JTextField(line1);// creates recipe name text field with added pulled data from file
 		recipeNameLabel = new JLabel("Recipe Name");// creates recipe name label
 
-		totalTimeTextField = new JTextField(line2);// creates total time text field
+		totalTimeTextField = new JTextField(line2);// creates total time text field with added pulled data from file
 		totalTimeLabel = new JLabel("Total Time");// creates total time label
 
-		servingTextField = new JTextField(line3);// creates serving text field
+		servingTextField = new JTextField(line3);// creates serving text field with added pulled data from file
 		servingLabel = new JLabel("Servings");// creates serving label
-		
-		calorieTextField = new JTextField(line4);// creates calorie text field
+
+		calorieTextField = new JTextField(line4);// creates calorie text field with added pulled data from file
 		calorieLabel = new JLabel("Calories Per Serving");// creates calorie label
 
-		ingredientTextField = new JTextField(line5);// creates ingredient text field
+		ingredientTextField = new JTextField(line5);// creates ingredient text field with added pulled data from file
 		ingredientLabel = new JLabel("Ingredient");// creates ingredient label
 
-		instructionTextField = new JTextField(line6);// creates instruction text field
+		instructionTextField = new JTextField(line6);// creates instruction text field with added pulled data from file
 		instructionLabel = new JLabel("Instruction");// creates instruction label
 
 		blank = new JLabel();
 
-		// create grid layout
 		GridLayout g1 = new GridLayout(0, 1);
-		// g1.setColumns(2);
-		// g1.setRows(4);
 
 		// add layout, action listener, buttons, labels, and text fields to frame
 		frame.setLayout(g1);
@@ -111,7 +107,6 @@ public class ReviewRecipe {
 		frame.add(blank);
 
 		frame.setSize(400, 400);
-		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);// makes frame visible
 
 	}

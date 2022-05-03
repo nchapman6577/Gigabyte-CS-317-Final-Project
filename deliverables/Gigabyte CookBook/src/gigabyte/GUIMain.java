@@ -13,22 +13,22 @@ public class GUIMain extends JFrame implements ActionListener {
 
 	JFrame frameObj = new JFrame("Gigabyte: The Digital Cookbook");
 
-	JButton createBtn = new JButton("Create Recipe");
-	JButton reviewBtn = new JButton("Review Recipe");
-	JButton updateBtn = new JButton("Update Recipe");
-	JButton deleteBtn = new JButton("Delete Recipe");
-	JButton helpBtn = new JButton("Help");
-	JButton exitBtn = new JButton("Exit");
+	JButton createBtn = new JButton("Create Recipe");// creates create button
+	JButton reviewBtn = new JButton("Review Recipe");// creates review button
+	JButton updateBtn = new JButton("Update Recipe");// creates delete button
+	JButton deleteBtn = new JButton("Delete Recipe");// creates review button
+	JButton helpBtn = new JButton("Help");// creates help button
+	JButton exitBtn = new JButton("Exit");// creates exit button
 
 	public GUIMain() {
-
+		// adds action listener for each button
 		createBtn.addActionListener(this);
 		reviewBtn.addActionListener(this);
 		updateBtn.addActionListener(this);
 		deleteBtn.addActionListener(this);
 		helpBtn.addActionListener(this);
 		exitBtn.addActionListener(this);
-
+		// adds each button to frame
 		frameObj.add(createBtn);
 		frameObj.add(reviewBtn);
 		frameObj.add(updateBtn);

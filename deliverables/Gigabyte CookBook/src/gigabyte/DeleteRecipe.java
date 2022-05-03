@@ -20,10 +20,12 @@ public class DeleteRecipe {
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = fc.getSelectedFile();
 
-			if (file.delete()) {
-				JOptionPane.showMessageDialog(null, "File Deleted Successfully");
+			if (file.delete()) {// deletes selected file
+				JOptionPane.showMessageDialog(null, "File Deleted Successfully");// lets user know that file was
+																					// successfully deleted
 			} else {
-				System.out.println("Failed to delete the file");
+				JOptionPane.showMessageDialog(null, "File Wasn't Deleted, Try Again");// lets user know that file wasn't
+																						// deleted
 			}
 		}
 	}

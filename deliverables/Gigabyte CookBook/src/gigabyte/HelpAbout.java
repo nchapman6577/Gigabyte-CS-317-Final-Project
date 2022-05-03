@@ -1,6 +1,5 @@
 package gigabyte;
 
-//https://www.youtube.com/watch?v=y8IiDp5jgTc
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +14,7 @@ import javax.swing.JTextField;
 
 public class HelpAbout {
 
-	public HelpAbout() {
+	public HelpAbout() {//help text formatted
 		JOptionPane.showMessageDialog(null,
 				"Create Recipe: \r\n" + "1: Click the create recipe button\r\n" + "2: Enter in recipe data\r\n"
 						+ "3: Click the submit button\r\n" + "4: A message will pop up if the recipe was create \r\n"

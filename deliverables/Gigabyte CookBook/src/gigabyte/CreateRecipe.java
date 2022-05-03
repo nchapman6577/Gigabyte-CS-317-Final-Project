@@ -1,6 +1,5 @@
 package gigabyte;
 
-//https://www.youtube.com/watch?v=y8IiDp5jgTc
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class CreateRecipe implements ActionListener {
-	
+
 	JFrame frame = new JFrame("Create Recipe");// creates frame
 
 	JTextField recipeNameTextField = new JTextField("");// creates recipe name text field
@@ -36,7 +35,7 @@ public class CreateRecipe implements ActionListener {
 	JLabel instructionLabel = new JLabel("Instructions");// creates instruction label
 
 	JButton submitButton = new JButton("Submit");// creates submit button
-	JLabel blank = new JLabel();
+	JLabel blank = new JLabel();// creates holder space
 
 	public CreateRecipe() {
 		GridLayout g1 = new GridLayout(0, 1); // create grid layout
@@ -69,21 +68,26 @@ public class CreateRecipe implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getActionCommand() == submitButton.getActionCommand()) {
 			try {
-				String fileName = "C:\\Users\\naina\\OneDrive\\Desktop\\" + recipeNameTextField.getText() + ".txt";
+				String fileName = "C:\\Users\\naina\\OneDrive\\Desktop\\" + recipeNameTextField.getText() + ".txt";// creates
+																													// file
+																													// name
+																													// from
+																													// recipeNameTextField
 
 				File file = new File(fileName);
 				file.createNewFile();
 				FileWriter fileWriter = new FileWriter(
 						"C:\\Users\\naina\\OneDrive\\Desktop\\" + recipeNameTextField.getText() + ".txt");
 				;
-				fileWriter.write(recipeNameTextField.getText() + "\n");
-				fileWriter.write(totalTimeTextField.getText() + "\n");
-				fileWriter.write(servingTextField.getText() + "\n");
-				fileWriter.write(calorieTextField.getText() + "\n");
-				fileWriter.write(ingredientTextField.getText() + "\n");
-				fileWriter.write(instructionTextField.getText() + "\n");
+				fileWriter.write(recipeNameTextField.getText() + "\n");// writes recipe name to file
+				fileWriter.write(totalTimeTextField.getText() + "\n");// writes total time to file
+				fileWriter.write(servingTextField.getText() + "\n");// writes serving size to file
+				fileWriter.write(calorieTextField.getText() + "\n");// writes calorie to file
+				fileWriter.write(ingredientTextField.getText() + "\n");// writes ingredient to file
+				fileWriter.write(instructionTextField.getText() + "\n");// writes instruction to file
 				fileWriter.close();
-				JOptionPane.showMessageDialog(null, "File Written Successfully");
+				JOptionPane.showMessageDialog(null, "File Written Successfully");// lets user know that file was
+																					// sucessful
 
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, e + "");
